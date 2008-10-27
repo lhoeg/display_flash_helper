@@ -31,6 +31,22 @@ Remember to include the stylesheet in your layout:
 
   <%= stylesheet_link_tag 'flash_styles' %>
 
+Configuring
+===========
+
+Options for display_flash_helper are optional and get their default values from the DisplayFlashHelper.flash_options hash.
+You can write to this hash to override default values on the global level:
+
+  DisplayFlashHelper.flash_options[:error_class] = 'my_error'
+
+Available options (and their defaults) are:
+
+  :flash_types    => [:error, :warning, :notice]
+  :error_class    => 'error'
+  :warning_class  => 'warning'
+  :notice_class   => 'notice'
+  :flash_id       => 'flash'
+
 Style thanks to Janko Jovanovic's post http://www.jankoatwarpspeed.com/post/2008/05/22/CSS-Message-Boxes-for-different-message-types.aspx
 Silk Icons from http://famfamfam.com/lab/icons/silk/, released under the Creative Commons Attribution 2.5 License
 Copyright (c) 2008 Geoffrey Dagley, released under the MIT license
