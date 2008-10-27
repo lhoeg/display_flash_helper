@@ -41,10 +41,11 @@ You can write to this hash to override default values on the global level:
 
 Available options (and their defaults) are:
 
-  :flash_types    => [:error, :warning, :notice]
+  :flash_types    => [:error, :warning, :notice, :info]
   :error_class    => 'error'
   :warning_class  => 'warning'
   :notice_class   => 'notice'
+  :info_class     => 'info'
   :flash_id       => 'flash'
 
 Style thanks to Janko Jovanovic's post http://www.jankoatwarpspeed.com/post/2008/05/22/CSS-Message-Boxes-for-different-message-types.aspx

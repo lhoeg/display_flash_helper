@@ -1,7 +1,7 @@
 module DisplayFlashHelper
   # global options for displaying flash messages
   @@flash_options = {
-    :flash_types    => [:error, :warning, :notice],
+    :flash_types    => [:error, :warning, :notice, :info],
     :error_class    => 'error',
     :warning_class  => 'warning',
     :notice_class   => 'notice',
