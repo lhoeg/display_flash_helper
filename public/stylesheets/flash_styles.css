@@ -9,15 +9,15 @@
 
 #flash .notice {
   color: #fff;
-  background: green url(/images/icons/accept.gif) no-repeat 5px center;
+  background: green url(/images/display_flash/accept.gif) no-repeat 5px center;
 }
 
 #flash .error {
   color: #fff;
-  background: red url(/images/icons/exclamation.gif) no-repeat 5px center;
+  background: red url(/images/display_flash/exclamation.gif) no-repeat 5px center;
 }
 
 #flash .warning {
   color: #666;
-  background: yellow url(/images/icons/error.gif) no-repeat 5px center;
+  background: yellow url(/images/display_flash/error.gif) no-repeat 5px center;
 }
