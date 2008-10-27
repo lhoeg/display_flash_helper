@@ -1,13 +1,18 @@
-#flash .notice, #flash .warning, #flash .error {
+#flash .info, #flash .notice, #flash .warning, #flash .error {
   border: 1px solid;
 
   font-family:Arial, Helvetica, sans-serif;
   font-size: medium;
   font-weight: bold;
 
-  margin-bottom: 10px;
+  margin: 10px 0px;
   padding: 5px;
   padding-left: 25px;
+}
+
+#flash .info {
+  color: #00529B;
+  background: #BDE5F8 url('../images/display_flash/information.png') no-repeat 5px center;
 }
 
 #flash .notice {
@@ -15,12 +20,12 @@
   background: #DFF2BF url('../images/display_flash/accept.gif') no-repeat 5px center;
 }
 
-#flash .error {
+#flash .warning {
   color: #9F6000;
-  background: #FEEFB3 url('../images/display_flash/exclamation.gif') no-repeat 5px center;
+  background: #FEEFB3 url('../images/display_flash/error.gif') no-repeat 5px center;
 }
 
-#flash .warning {
+#flash .error {
   color: #D8000C;
-  background: #FFBABA url('../images/display_flash/error.gif') no-repeat 5px center;
+  background: #FFBABA url('../images/display_flash/exclamation.gif') no-repeat 5px center;
 }
