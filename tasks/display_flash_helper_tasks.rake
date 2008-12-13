@@ -17,8 +17,12 @@ namespace :display_flash do
       File.join(RAILS_ROOT, 'public', 'stylesheets', 'flash_styles.css'),
       :verbose => true
     )
+    FileUtils.rm(
+      File.join(RAILS_ROOT, 'public', 'stylesheets', 'display_flash_helper.css'),
+      :verbose => true
+    )
     FileUtils.rm_r(
-      File.join(RAILS_ROOT, 'public', 'images', 'display_flash'),
+      File.join(RAILS_ROOT, 'public', 'images', 'display_flash_helper'),
       :verbose => true
     )
     puts "Finished."

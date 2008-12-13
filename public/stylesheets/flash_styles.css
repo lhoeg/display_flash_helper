@@ -1,31 +1,23 @@
-#flash .info, #flash .notice, #flash .warning, #flash .error {
-  border: 1px solid;
-
-  font-family:Arial, Helvetica, sans-serif;
-  font-size: medium;
+#flash .notice, #flash .warning, #flash .error {
+  border: 2px solid #000;
+  font-size: 123.1%;
   font-weight: bold;
-
-  margin: 10px 0px;
+  margin-bottom: 10px;
   padding: 5px;
   padding-left: 25px;
 }
 
-#flash .info {
-  color: #00529B;
-  background: #BDE5F8 url('../images/display_flash/information.png') no-repeat 5px center;
-}
-
 #flash .notice {
-  color: #4F8A10;
-  background: #DFF2BF url('../images/display_flash/accept.gif') no-repeat 5px center;
-}
-
-#flash .warning {
-  color: #9F6000;
-  background: #FEEFB3 url('../images/display_flash/error.gif') no-repeat 5px center;
+  color: #fff;
+  background: green url(/images/display_flash_helper/accept.gif) no-repeat 5px center;
 }
 
 #flash .error {
-  color: #D8000C;
-  background: #FFBABA url('../images/display_flash/exclamation.gif') no-repeat 5px center;
+  color: #fff;
+  background: red url(/images/display_flash_helper/exclamation.gif) no-repeat 5px center;
+}
+
+#flash .warning {
+  color: #666;
+  background: yellow url(/images/display_flash_helper/error.gif) no-repeat 5px center;
 }

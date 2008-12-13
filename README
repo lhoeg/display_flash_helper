@@ -6,7 +6,7 @@ show flash[:notice], flash[:warning], or flash[:error] messages.
 
 There are some default styles and icons that can be used.  
 
-  rake display_helper:setup
+  rake display_flash:setup
 
 Example
 =======
@@ -31,6 +31,10 @@ Remember to include the stylesheet in your layout:
 
   <%= stylesheet_link_tag 'flash_styles' %>
 
+or the new stylesheet
+
+  <%= stylesheet_link_tag 'display_flash_helper' %>
+
 Configuring
 ===========
 
@@ -48,6 +52,42 @@ Available options (and their defaults) are:
   :info_class     => 'info'
   :flash_id       => 'flash'
 
+Default flash messages
+======================
+
+The following flash helper methods are available for controllers:
+
+  flash_created(@object)
+  flash_create_failed(@object)
+  flash_updated(@object)
+  flash_update_failed(@object)
+
+Add the following to ApplicationController (app/controllers/application.rb):
+
+  include DisplayFlashHelper::FlashHelperMethods
+
+Add the following to your I18n locale file (eg. config/locales/en-UK.yml):
+
+  display_flash_helper:
+    created: "{{obj}} was successfully created."
+    create_failed: "{{obj}} could not be created."
+    updated: "{{obj}} was successfully updated."
+    update_failed: "{{obj}} could not be updated."
+
+You may also want to define/translate human names for objects in your I18n locale file; e.g.:
+
+  activerecord:
+    models:
+      user: "Member"
+      ...
+
+Notes
+=====
+
 Style thanks to Janko Jovanovic's post http://www.jankoatwarpspeed.com/post/2008/05/22/CSS-Message-Boxes-for-different-message-types.aspx
+Knob Buttons Toolbar icons from http://itweek.deviantart.com/art/Knob-Buttons-Toolbar-icons-73463960
 Silk Icons from http://famfamfam.com/lab/icons/silk/, released under the Creative Commons Attribution 2.5 License
+
+To display transparent png images correctly in IE6, see Angus Turnbull's solution http://www.twinhelix.com/css/iepngfix/
+
 Copyright (c) 2008 Geoffrey Dagley, released under the MIT license
