@@ -45,10 +45,10 @@ module DisplayFlashHelper
       def human_name(object)
         if object.is_a? Class
           object.human_name
-        #elsif object.is_a? String
-          # TODO
-        #elsif object.is_a? Symbol
-          # TODO
+        elsif object.is_a? String
+          object
+        elsif object.is_a? Symbol
+          I18n.t object
         else
           #I18n.t object.class.name.underscore.to_sym, :default => object.class.name, :scope => [:activerecord, :models]
           object.class.human_name
