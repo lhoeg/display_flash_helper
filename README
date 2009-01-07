@@ -1,7 +1,7 @@
 DisplayFlashHelper
 ==================
 
-Just a little helper to make it easier to display notice, warning, and error messages. It will only show flash[:notice], flash[:warning], flash[:error] and flash[:info] messages.
+Just a little helper to make it easier to display notice, warning, and error messages. It will only show flash[:success], flash[:notice], flash[:warning], and flash[:error] messages.
 
 Example
 =======
@@ -44,11 +44,11 @@ You can write to this hash to override default values on the global level:
 
 Available options (and their defaults) are:
 
-  :flash_types    => [:error, :warning, :notice, :info]
-  :error_class    => 'error'
-  :warning_class  => 'warning'
+  :flash_types    => [:success, :notice, :warning, :error]
+  :success_class  => 'success'
   :notice_class   => 'notice'
-  :info_class     => 'info'
+  :warning_class  => 'warning'
+  :error_class    => 'error'
   :flash_id       => 'flash'
 
 Default flash messages
@@ -75,10 +75,18 @@ Add the following to your I18n locale file (eg. config/locales/en-UK.yml):
 
 You may also want to define/translate human names for objects in your I18n locale file; e.g.:
 
-  activerecord:
-    models:
-      user: "Member"
-      ...
+  RAILS_ROOT/config/locales/{locale}.local.yml
+    activerecord:
+      models:
+        user: "Member"
+        ...
+
+TODO
+====
+
+- Use Rails I18n in flash helper methods
+
+- Use CSS sprite to combine images into one
 
 Notes
 =====

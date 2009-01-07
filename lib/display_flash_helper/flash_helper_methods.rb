@@ -15,7 +15,7 @@ module DisplayFlashHelper
   module FlashHelperMethods
 
     def flash_created(object)
-      flash[:notice] = I18n.t :created,
+      flash[:success] = I18n.t :created,
         :obj => human_name(object), :scope => :display_flash_helper,
         :default => "{{obj}} was successfully created."
     end
@@ -29,7 +29,7 @@ module DisplayFlashHelper
     def flash_updated(object, name=nil)
       obj_name = human_name(object)
       obj_name << " '#{name.to_s}'" if name
-      flash[:notice] = I18n.t :updated,
+      flash[:success] = I18n.t :updated,
         :obj => obj_name, :scope => :display_flash_helper,
         :default => "{{obj}} was successfully updated."
     end

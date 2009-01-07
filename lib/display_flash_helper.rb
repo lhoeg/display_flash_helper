@@ -1,11 +1,11 @@
 module DisplayFlashHelper
   # global options for displaying flash messages
   @@flash_options = {
-    :flash_types    => [:error, :warning, :notice, :info],
-    :error_class    => 'error',
-    :warning_class  => 'warning',
+    :flash_types    => [:success, :notice, :warning, :error],
+    :success_class  => 'success',
     :notice_class   => 'notice',
-    :info_class     => 'info',
+    :warning_class  => 'warning',
+    :error_class    => 'error',
     :flash_id       => 'flash'
   }
   mattr_accessor :flash_types

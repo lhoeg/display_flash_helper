@@ -36,7 +36,14 @@ describe "ApplicationHelper" do
     self.expects(:content_tag).with(:div, "ERROR", :id => "flash")
   	display_flash
   end
-  
+
+  it "should create success flash" do
+    flash[:error] = "This is a success!"
+    self.expects(:content_tag).with(:div, "This is a success!", :class => "success").returns("SUCCESS")
+    self.expects(:content_tag).with(:div, "SUCCESS", :id => "flash")
+    display_flash
+  end
+
   it "should create multiple flash messages if multiple set" do
     flash[:error] = "This is an error"
     flash[:notice] = "This is a notice"
