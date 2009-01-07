@@ -1,7 +1,11 @@
 DisplayFlashHelper
 ==================
 
-Just a little helper to make it easier to display notice, warning, and error messages. It will only show flash[:success], flash[:notice], flash[:warning], and flash[:error] messages.
+Just a little helper to make it easier to display notice, warning, and error messages. It will only show flash[:success], flash[:notice], flash[:warning], or flash[:error] messages.
+
+There are some default styles and icons that can be used.  
+
+  rake display_helper:setup
 
 Example
 =======
@@ -21,10 +25,6 @@ And it will create:
   <div id="flash">
     <div class="notice">Something has been done.</div>
   </div>
-
-There are some default styles and icons included which may be useful:
-
-  rake display_flash:setup
 
 Include the stylesheet in the <head> section of your layout:
 
@@ -54,18 +54,18 @@ Available options (and their defaults) are:
 Default flash messages
 ======================
 
-The following flash helper methods are available for controllers:
+Add the following to ApplicationController (app/controllers/application.rb):
+
+  include DisplayFlashHelper::FlashHelperMethods
+
+The following flash helper methods are now available for controllers instead of the static flash[:notice] = 'Note was successfully created.'-like messages:
 
   flash_created(@object)
   flash_create_failed(@object)
   flash_updated(@object)
   flash_update_failed(@object)
 
-Add the following to ApplicationController (app/controllers/application.rb):
-
-  include DisplayFlashHelper::FlashHelperMethods
-
-Add the following to your I18n locale file (eg. config/locales/en-UK.yml):
+Add the following to your I18n locale file (e.g. RAILS_ROOT/config/locales/#{I18n.locale}.local.yml):
 
   display_flash_helper:
     created: "{{obj}} was successfully created."
@@ -73,18 +73,16 @@ Add the following to your I18n locale file (eg. config/locales/en-UK.yml):
     updated: "{{obj}} was successfully updated."
     update_failed: "{{obj}} could not be updated."
 
-You may also want to define/translate human names for objects in your I18n locale file; e.g.:
-
-  RAILS_ROOT/config/locales/{locale}.local.yml
-    activerecord:
-      models:
-        user: "Member"
-        ...
-
 TODO
 ====
 
-- Use Rails I18n in flash helper methods
+- Use Rails I18n in flash helper methods;
+You may want to define/translate human names for objects in your I18n locale file; for example:
+
+  activerecord:
+    models:
+      user: "Employee"
+      ...
 
 - Use CSS sprite to combine images into one
 
